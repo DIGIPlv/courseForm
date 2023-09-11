@@ -1,17 +1,10 @@
-let normalSections=document.getElementsByClassName("kick_section");
-
-let altSections=document.getElementsByClassName("kick_form");
-
+let normalSections = document.getElementsByClassName("kick_section");
+let altSections = document.getElementsByClassName("kick_form");
 const payType = document.getElementById("course-payment-type");
-
 const priceFild = document.getElementById("course-price");
-
-const priceWordsFild=document.getElementById("course-price-words");
-
-const btnBuyAlt=document.getElementById("purchase_alt");
-
-const btnBuyReg=document.getElementById("purchase_reg");
-
+const priceWordsFild = document.getElementById("course-price-words");
+const btnBuyAlt = document.getElementById("purchase_alt");
+const btnBuyReg = document.getElementById("purchase_reg");
 
 window.onhashchange=function(){
 let hash=location.hash;
@@ -40,7 +33,7 @@ function buyCourse(price) {
   priceWordsFild.value = price === priceAlt ? priceOneWords : priceTwoWords;
   priceID = price === priceAlt ? IDOpt[0] : IDOpt[1];
   location.hash = "registrationForm";
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
 }
 
 var stripe=Stripe("pk_live_51IExHcCegkqBtvRmaF2bwzdZGLCkC3z5jZTH7rLe8yYDytA9NSNsXNJRlv975sGydNjCJrbbUr8TNUdobNR4D2fy003F8G7V1Q");
